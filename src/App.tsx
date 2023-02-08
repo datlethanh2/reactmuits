@@ -1,13 +1,17 @@
 import React from 'react';
-import RouteLayout from "./route/RouteLayout";
-import { BrowserRouter } from 'react-router-dom';
-
+import ThemeProvider from './theme';
+import Router from './routes';
+import ScrollToTop from './components/scroll-to-top';
+import { StyledChart } from './components/chart';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <RouteLayout/>
-      </BrowserRouter>
+      
+        <ThemeProvider>
+          <ScrollToTop />
+          <StyledChart />
+          <Router />      
+        </ThemeProvider>
     </div>
   );
 }
