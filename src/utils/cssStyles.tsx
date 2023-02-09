@@ -3,11 +3,19 @@ import { alpha } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
-export function bgBlur(props:any) {
-  const color = props?.color || '#000000';
-  const blur = props?.blur || 6;
-  const opacity = props?.opacity || 0.8;
-  const imgUrl = props?.imgUrl;
+interface Props {
+  color?: string;
+  blur?: number;
+  opacity?: number;
+  imgUrl?: string;
+}
+
+
+export function bgBlur(props: Props = {}): { [key: string]: any } {
+  const color = props.color || '#000000';
+  const blur = props.blur || 6;
+  const opacity = props.opacity || 0.8;
+  const imgUrl = props.imgUrl;
 
   if (imgUrl) {
     return {
